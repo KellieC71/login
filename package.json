@@ -1,0 +1,32 @@
+{
+  "name": "medtracker",
+  "version": "1.0.0",
+  "description": "track meds",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && yarn install",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KellieC71/login.git"
+  },
+  "author": "Kellie Cuitino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KellieC71/login/issues"
+  },
+  "homepage": "https://github.com/KellieC71/login#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.4.13",
+    "nodemon": "^1.18.10"
+  }
+}
